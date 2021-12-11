@@ -23,7 +23,6 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Topologies topObj = new Topologies();
-
         Topologies.queryTopologies();
         
 
