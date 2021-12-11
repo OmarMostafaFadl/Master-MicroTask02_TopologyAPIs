@@ -1,0 +1,1 @@
+Quering on the memory after reading a single topology with id : top1
