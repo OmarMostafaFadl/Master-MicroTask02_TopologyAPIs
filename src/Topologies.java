@@ -16,7 +16,19 @@ import java.io.IOException;
 
 public class Topologies {
 
+    /*
+        This Class includes all the needed functions (methods) for manipulating the JSON
+        file data
+    */
+
     static void ReadJSON(String FILENAME){
+
+        /*
+            Inputs : Filename
+            Outputs : No outputs
+            This function reads info out of a JSON file then saves this info in the memory
+            for later manipulation or usage.
+        */
 
         JSONParser jsonParser = new JSONParser();
 
@@ -113,6 +125,14 @@ public class Topologies {
 
     static void writeJSON(String FILENAME, String ID){
 
+        /*
+            Inputs : The name which the file will be saved with (Filename)
+                     String ID of the topology needed to be written in a JSON file
+            Outputs : No outputs except the saved JSON file
+            This function takes the topology ID then fetches its information from saved
+            memory then writes and saves a JSON file with this info.
+        */
+
         JSONObject topologyDetails = new JSONObject();
         JSONArray componentsList = new JSONArray();
 
@@ -194,6 +214,12 @@ public class Topologies {
 
     static void queryTopologies(){
 
+        /*
+            Inputs : No inputs
+            Outputs : No outputs
+            This function prints all the Topologies saved in the memory
+        */
+
         if(topologiesIDsList.size() == 0){
             System.out.println("There are no Topologies in memory");
         }
@@ -208,6 +234,13 @@ public class Topologies {
     }
 
     static void deleteTopology(String ID){
+
+        /*
+            Inputs : String ID of Topology
+            Outputs : No output.
+            This function takes a Topology ID and then delete this Topology and all its
+            connected devices from the memory.
+        */
 
         int needed_index_top = topologiesIDsList.indexOf(ID);
         if(needed_index_top != -1){
@@ -268,6 +301,13 @@ public class Topologies {
     
     static void queryDevices(String ID){
 
+        /*
+          Inputs : String ID of the Topology
+          Outputs : No outputs  
+          This function takes a Topology ID and then prints all the devices
+          included in this topology
+        */
+
         int needed_index = Resistor.resistors_topology_list.indexOf(ID);
 
         if(needed_index != -1){
@@ -283,6 +323,13 @@ public class Topologies {
     }
 
     static void queryDevicesWithNetlistNode(String ID, String NetlistNode){
+
+        /*
+            Inputs : String ID of the needed Topology
+            Outputs : No outputs
+            This function takes the needed Topology ID and NetlistNode name and then prints what devices are
+            connected to this netlist if there is any.
+        */
 
         if(NetlistNode == "t1" || NetlistNode == "t2"){
 
@@ -312,6 +359,6 @@ public class Topologies {
         }
     }
 
-    static List<String> topologiesIDsList = new ArrayList<>();
+    static List<String> topologiesIDsList = new ArrayList<>();        //Needed for topologin quering
     
 }

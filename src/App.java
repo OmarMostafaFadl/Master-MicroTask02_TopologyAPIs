@@ -11,10 +11,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-@SuppressWarnings({"unused", "unchecked"})
+@SuppressWarnings({"unused"})
 
 
 public class App {
+
+    /*
+        This is the main class where we call any function and used them to manipulate JSON Files
+    */
 
     public static void main(String[] args) throws Exception {
 
